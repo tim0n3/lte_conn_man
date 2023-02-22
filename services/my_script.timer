@@ -1,0 +1,10 @@
+[Unit]
+Description=Run my_script every hour after datacollector.service
+
+[Timer]
+OnUnitActiveSec=datacollector.service
+OnBootSec=90
+Unit=lte.service
+
+[Install]
+WantedBy=timers.target

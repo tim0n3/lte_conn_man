@@ -1,0 +1,9 @@
+[Unit]
+Description=My LTE Script
+
+[Service]
+Type=simple
+ExecStart=/root/start_LTE.sh
+
+[Install]
+WantedBy=multi-user.target

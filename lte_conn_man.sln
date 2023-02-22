@@ -3,9 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{44D9A5E0-626B-408A-AE08-8817A865B2A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bin", "bin", "{2B79AB2C-7CA8-4815-8430-168D99FF5A6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uninstall", "uninstall", "{8C5EB691-5DC9-45A3-A780-F1C038D9CD59}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lte_conn_man", "lte_conn_man", "{498E028E-05B9-4EDB-8978-B67595091270}"
+	ProjectSection(SolutionItems) = preProject
+		setup.sh = setup.sh
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44D9A5E0-626B-408A-AE08-8817A865B2A8} = {498E028E-05B9-4EDB-8978-B67595091270}
+		{2B79AB2C-7CA8-4815-8430-168D99FF5A6A} = {498E028E-05B9-4EDB-8978-B67595091270}
+		{8C5EB691-5DC9-45A3-A780-F1C038D9CD59} = {498E028E-05B9-4EDB-8978-B67595091270}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {751A2873-7AE3-4E97-BE62-A39DDE9E7F4B}
