@@ -135,6 +135,8 @@ _main() {
         log "Setting up services_ "
         install_timer
     fi
+
+    start_services
    log "_main() has completed... moving to exit function"
    clean_escape
 }
