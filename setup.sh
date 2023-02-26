@@ -64,6 +64,7 @@ install_timer() {
 # Function to move app into correct folder
 install_app() {
     cp app/start_LTE.sh /root/
+    chmod +x /root/start_LTE.sh
     log "Copied start_LTE.sh to /root/"
 }
 
