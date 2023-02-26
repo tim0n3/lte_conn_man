@@ -136,6 +136,6 @@ _main() {
         install_timer
     fi
    log "_main() has completed... moving to exit function"
+   clean_escape
 }
-
-clean_escape
+_main
