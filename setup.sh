@@ -64,6 +64,7 @@ install_timer() {
 # Function to move app into correct folder
 install_app() {
     cp app/start_LTE.sh /root/
+    log "Copied start_LTE.sh to /root/"
 }
 
 app_checker() {
@@ -72,7 +73,7 @@ app_checker() {
         log "Files $app_File exists in /root/ folder."
     else
         log "Setting up app_ "
-        cp app/start_LTE.sh /root/
+        install_app
     fi
 }
 
@@ -136,6 +137,7 @@ _main() {
         install_timer
     fi
 
+    app_checker
     start_services
    log "_main() has completed... moving to exit function"
    clean_escape
