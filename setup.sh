@@ -77,6 +77,12 @@ app_checker() {
     fi
 }
 
+permissions_checker() {
+    chmod +x -R *.sh
+    echo "[$(date +'%Y-%m-%d %H:%M:%S')] : Setting permissions for all shell files before starting the script"
+    log "Setting permissions for all shell files before starting the script"
+}
+
 start_services() {
     # Start the services
     log "Starting timer"
@@ -115,31 +121,32 @@ timer_checker() {
     fi
 }
 
-# Main method / Function
-## This is the first function to run in this program
-_main() {
+# Main method / Function || Start of the setup script
 
-    log "Starting installation process..."
+log "Starting installation process..."
 
-    # Check the services are installed correctly
-    if [ -e "$service_Path" ]; then
-        log "Files $service_File exists in /etc/systemd/system/ folder."
-    else
-        log "Setting up services_ "
-        install_service
-    fi
+permissions_checker
 
-    # Check the timer is installed correctly
-    if [ -e "$timer_Path" ]; then
-        log "Files $timer_File exists in /etc/systemd/system/ folder."
-    else
-        log "Setting up services_ "
-        install_timer
-    fi
+app_checker
 
-    app_checker
-    start_services
-   log "_main() has completed... moving to exit function"
-   clean_escape
-}
-_main
+# Check the services are installed correctly
+if [ -e "$service_Path" ]; then
+    log "Files $service_File exists in /etc/systemd/system/ folder."
+else
+    log "Setting up services_ "
+    install_service
+fi
+
+# Check the timer is installed correctly
+if [ -e "$timer_Path" ]; then
+    log "Files $timer_File exists in /etc/systemd/system/ folder."
+else
+    log "Setting up services_ "
+    install_timer
+fi
+
+start_services
+
+log "_main() has completed... moving to exit function"
+
+clean_escape
